@@ -9,7 +9,7 @@ rules = [
     {'rule': '"Open-source" should be hyphenated',
      'regex': 'open source'},
     {'rule': "Avoid the use of 'we', 'our', and 'let\'s'",
-     'regex': "([Ww]e\s|[Oo]ur\s|[Ll]et's)"},
+     'regex': "([Ww]e\s|\s[Oo]ur\s|[Ll]et's)"},
     {'rule':"No trailing whitespace",
      'regex':"[ \t]+$"},
     {'rule': "Use a single space after a period",
@@ -30,7 +30,7 @@ def main():
                         reg = regex.compile(rule['regex'])
                         match_obj = regex.search(reg, line)
                         if match_obj:
-                            print(str(filename) + ":\t" + str(line_number) + ":" + str(match_obj.start()) + "\t" + rule['rule'])
+                            print(str(filename) + ":\t\t" + str(line_number) + ":" + str(match_obj.start()) + "\t\t" + rule['rule'])
     return True
 
 
